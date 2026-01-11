@@ -1,0 +1,555 @@
+/* ========================================
+   Responsive Styles
+   Mobile First Approach
+   ======================================== */
+
+/* ========================================
+   Tablet (768px - 1023px)
+   ======================================== */
+@media screen and (max-width: 1023px) {
+  :root {
+    --font-size-h1: 40px;
+    --font-size-h2: 32px;
+    --font-size-h3: 22px;
+    --spacing-section: 80px;
+    --spacing-large: 60px;
+  }
+
+  /* Header */
+  .header {
+    padding: 15px 16px;
+  }
+
+  .header__container {
+    margin: 0;
+  }
+
+  .header__nav {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-pure-white);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 80px 20px 20px;
+    transition: left 0.3s ease;
+    z-index: 10001;
+    overflow-y: auto;
+  }
+
+  .header__nav.active {
+    left: 0 !important;
+    display: block !important;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .header__nav-link {
+    display: block;
+    padding: 16px;
+    border-bottom: 1px solid var(--color-soft-gray);
+  }
+
+  .header__phone {
+    display: none;
+  }
+
+  .header__actions {
+    gap: var(--spacing-xs);
+  }
+
+  .btn--header {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .header__mobile-toggle {
+    display: flex;
+    position: relative;
+  }
+
+  /* Mobile Toggle Active State */
+  .header__mobile-toggle.active span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  .header__mobile-toggle.active span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .header__mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__mobile-toggle.active span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 500px;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .hero__title {
+    font-size: 36px;
+  }
+
+  .hero__subtitle {
+    font-size: 16px;
+  }
+
+  /* Trainer & Expert */
+  .trainer__content,
+  .expert__content,
+  .access__content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-medium);
+  }
+
+  .trainer__image-wrapper,
+  .expert__image-wrapper {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* Pricing */
+  .pricing__table {
+    font-size: 14px;
+  }
+
+  .pricing__table th,
+  .pricing__table td {
+    padding: 12px 8px;
+  }
+
+  /* CTA */
+  .cta__title {
+    font-size: 36px;
+  }
+
+  .cta__buttons {
+    gap: var(--spacing-medium);
+  }
+}
+
+/* ========================================
+   Mobile (320px - 767px)
+   ======================================== */
+@media screen and (max-width: 767px) {
+  :root {
+    --font-size-h1: 32px;
+    --font-size-h2: 28px;
+    --font-size-h3: 20px;
+    --font-size-base: 14px;
+    --font-size-large: 16px;
+    --spacing-section: 60px;
+    --spacing-large: 40px;
+    --spacing-medium: 24px;
+    --spacing-small: 16px;
+    --container-padding: 16px;
+  }
+
+  .sp-only {
+    display: inline;
+  }
+
+  /* Header */
+  .header {
+    padding: 12px 16px;
+  }
+
+  .header__container {
+    margin: 0;
+  }
+
+  .header__logo-img {
+    height: 40px;
+  }
+
+  .header__actions .btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 500px;
+    height: auto;
+    padding: 100px 0 60px;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .hero__title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .hero__subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .hero__cta {
+    margin-bottom: 40px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .btn--large {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+
+  .btn--phone,
+  .btn--line {
+    min-width: auto;
+    width: 100%;
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  /* Problems */
+  .problems__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .problems__card {
+    padding: 24px;
+  }
+
+  .problems__message {
+    padding: 24px;
+  }
+
+  .problems__message-title {
+    font-size: 20px;
+  }
+
+  .problems__message-text {
+    font-size: 16px;
+  }
+
+  /* Features */
+  .features__grid {
+    gap: 40px;
+  }
+
+  .features__card-header {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .features__number {
+    font-size: 36px;
+  }
+
+  .features__title {
+    font-size: 20px;
+  }
+
+  .features__image {
+    height: 200px;
+  }
+
+  .features__content {
+    padding: 24px;
+  }
+
+  .features__subtitle {
+    font-size: 16px;
+  }
+
+  .features__description {
+    font-size: 14px;
+  }
+
+  /* Trainer */
+  .trainer__name {
+    font-size: 28px;
+  }
+
+  .trainer__description {
+    font-size: 14px;
+  }
+
+  .trainer__highlight {
+    font-size: 16px;
+  }
+
+  .trainer__stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .trainer__stat-number {
+    font-size: 28px;
+  }
+
+  /* Expert */
+  .expert__name {
+    font-size: 28px;
+  }
+
+  .expert__title {
+    font-size: 16px;
+  }
+
+  .expert__quote {
+    padding: 20px;
+  }
+
+  .expert__quote-text {
+    font-size: 16px;
+  }
+
+  .expert__description {
+    font-size: 14px;
+  }
+
+  /* Testimonials */
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .testimonials__image-wrapper {
+    height: 300px;
+  }
+
+  .testimonials__content {
+    padding: 20px;
+  }
+
+  .testimonials__text {
+    font-size: 14px;
+  }
+
+  /* Pricing */
+  .pricing__intro {
+    font-size: 14px;
+  }
+
+  .pricing__tabs {
+    gap: 8px;
+  }
+
+  .pricing__tab {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .pricing__features {
+    padding: 16px;
+    font-size: 12px;
+  }
+
+  .pricing__table {
+    font-size: 11px;
+  }
+
+  .pricing__table th,
+  .pricing__table td {
+    padding: 8px 4px;
+  }
+
+  /* Make pricing table scrollable on mobile */
+  .pricing__table-wrapper {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pricing__table {
+    min-width: 600px;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 60px 0;
+  }
+
+  .cta__title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .cta__subtitle {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .cta__buttons {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cta__button-label {
+    font-size: 14px;
+  }
+
+  /* Access */
+  .access__info-item {
+    margin-bottom: 24px;
+  }
+
+  .access__info-title {
+    font-size: 16px;
+  }
+
+  .access__info-text {
+    font-size: 14px;
+  }
+
+  .access__map iframe {
+    height: 300px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 24px 0;
+  }
+
+  .footer__copyright {
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   Extra Small Mobile (max-width: 375px)
+   ======================================== */
+@media screen and (max-width: 375px) {
+  :root {
+    --font-size-h1: 28px;
+    --font-size-h2: 24px;
+    --font-size-h3: 18px;
+  }
+
+  .hero__title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .features__number {
+    font-size: 32px;
+  }
+
+  .cta__title {
+    font-size: 24px;
+  }
+
+  .trainer__name,
+  .expert__name {
+    font-size: 24px;
+  }
+}
+
+/* ========================================
+   Landscape Mobile (max-height: 500px)
+   ======================================== */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+  .header,
+  .hero__video-container,
+  .hero__scroll,
+  .cta,
+  .footer {
+    display: none;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  .section-title {
+    page-break-after: avoid;
+  }
+
+  .features__card,
+  .testimonials__card {
+    page-break-inside: avoid;
+  }
+}
+
+/* ========================================
+   Accessibility Enhancements
+   ======================================== */
+
+/* Focus visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-nasu-blue);
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-nasu-blue: #0066CC;
+    --color-fresh-green: #006600;
+    --color-accent-orange: #CC5500;
+  }
+
+  .btn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  /* Add dark mode styles here if needed in the future */
+}
