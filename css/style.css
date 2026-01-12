@@ -22,7 +22,7 @@
   --font-size-large: 22px;
   --font-size-h1: 48px;
   --font-size-h2: 36px;
-  --font-size-h3: 24px;
+  --font-size-h3: 28px;
   --line-height-base: 1.8;
   --line-height-heading: 1.4;
 
@@ -234,7 +234,9 @@ main {
    Buttons
    ======================================== */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 32px;
   border-radius: var(--radius-button);
   font-weight: 700;
@@ -321,6 +323,23 @@ main {
   overflow: hidden;
 }
 
+.hero__video-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 aspect ratio */
+  background-image: url('../images/video_firstframe.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
 .hero__video {
   position: absolute;
   top: 50%;
@@ -331,6 +350,7 @@ main {
   min-height: 100vh;
   min-width: 177.77vh; /* 16:9 aspect ratio */
   border: none;
+  z-index: 1;
 }
 
 .hero__overlay {
@@ -536,7 +556,7 @@ main {
   align-items: center;
   gap: var(--spacing-small);
   min-height: 100px;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 7%) 100%, 0 100%);
 }
 
 .features__number {
@@ -815,7 +835,8 @@ main {
 }
 
 .pricing__tab:hover {
-  background-color: #E8EBF0;
+  background-color: #3A7FC8;
+  color: var(--color-pure-white);
 }
 
 .pricing__tab--active {
@@ -981,12 +1002,13 @@ main {
 }
 
 .access__phone {
-  color: var(--color-nasu-blue);
   font-weight: 700;
   transition: var(--transition-fast);
+  text-decoration: underline;
 }
 
 .access__phone:hover {
+  color: var(--color-nasu-blue);
   text-decoration: underline;
 }
 
@@ -1012,4 +1034,59 @@ main {
 .footer__copyright {
   font-size: var(--font-size-small);
   opacity: 0.8;
+}
+
+/* ========================================
+   Video Loading Animation
+   ======================================== */
+
+/* 静止画：透明度は使わない（オーバーレイで暗さを制御） */
+.hero__video-container::before {
+  opacity: 1;
+  will-change: opacity;
+  backface-visibility: hidden;
+}
+
+/* オーバーレイ：初期状態は暗め */
+.hero__overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+  transition: opacity 5s ease-out;
+}
+
+/* 動画読み込み完了時：オーバーレイをフェードアウト（画面が明るくなる） */
+.hero__video-container.video-loaded .hero__overlay {
+  opacity: 0;
+}
+
+/* 動画読み込み完了時：静止画もフェードアウト */
+.hero__video-container.video-loaded::before {
+  opacity: 0;
+  transition: opacity 3s ease-out 2s;
+  pointer-events: none;
+  will-change: auto;
+}
+
+/* 完全読み込み後：疑似要素を完全削除 */
+.hero__video-container.video-fully-loaded::before {
+  content: none;
+}
+
+/* prefers-reduced-motion: アニメーションを無効化したユーザー向け */
+@media (prefers-reduced-motion: reduce) {
+  .hero__video-container::before {
+    transition: none;
+  }
+
+  .hero__overlay {
+    transition: none;
+  }
+
+  .hero__video-container.video-loaded .hero__overlay {
+    opacity: 0;
+  }
+
+  .hero__video-container.video-loaded::before {
+    transition: none;
+    transition-delay: 0s;
+  }
 }

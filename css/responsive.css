@@ -261,18 +261,23 @@
   }
 
   .features__card-header {
-    padding: 20px;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 14px 16px;
+    flex-direction: row;
+    align-items: center;
     text-align: left;
+    gap: 10px;
+    min-height: 70px;
+    width: 90%;
   }
 
   .features__number {
-    font-size: 36px;
+    font-size: 32px;
+    line-height: 1;
   }
 
   .features__title {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 1.25;
   }
 
   .features__image {
@@ -439,6 +444,15 @@
   .footer__copyright {
     font-size: 12px;
   }
+
+  /* モバイル動画読み込み最適化 */
+  .hero__overlay {
+    transition: opacity 2.5s ease-out;
+  }
+
+  .hero__video-container.video-loaded::before {
+    transition: opacity 2.5s ease-out 1.5s;
+  }
 }
 
 /* ========================================
@@ -459,8 +473,20 @@
     font-size: 22px;
   }
 
+  .features__card-header {
+    padding: 12px 14px;
+    gap: 8px;
+    min-height: 65px;
+    width: 95%;
+  }
+
   .features__number {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  .features__title {
+    font-size: 14px;
+    line-height: 1.2;
   }
 
   .cta__title {
