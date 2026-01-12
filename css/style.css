@@ -32,6 +32,7 @@
   --spacing-medium: 40px;
   --spacing-small: 24px;
   --spacing-xs: 16px;
+  --spacing-xxs: 8px;
 
   /* Container */
   --container-max-width: 1200px;
@@ -157,7 +158,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-medium);
+  gap: var(--spacing-xxs);
 }
 
 .header__logo {
@@ -213,7 +214,6 @@ main {
   display: none;
   flex-direction: column;
   gap: 5px;
-  padding: 12px;
   background: none;
   border: none;
   cursor: pointer;
