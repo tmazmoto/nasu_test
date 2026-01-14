@@ -219,7 +219,7 @@
     const style = document.createElement('style');
     style.textContent = `
       .header__nav-link.active {
-        color: var(--color-nasu-blue);
+        color: var(--color-nasu-violet);
         background-color: var(--color-soft-gray);
       }
     `;
@@ -241,7 +241,7 @@
       right: 30px;
       width: 50px;
       height: 50px;
-      background-color: var(--color-nasu-blue);
+      background-color: var(--color-nasu-violet);
       color: white;
       border: none;
       border-radius: 50%;
