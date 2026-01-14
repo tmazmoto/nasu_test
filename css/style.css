@@ -3,7 +3,9 @@
    ======================================== */
 :root {
   /* Colors - Nasu Highlands Inspired Palette */
-  --color-nasu-blue: #4A90E2;
+  --color-nasu-violet: #785cb4;
+  --color-nasu-violet-dark: #554180;
+  --color-nasu-yellow: #f9df70;
   --color-fresh-green: #7CB342;
   --color-pure-white: #FFFFFF;
   --color-soft-gray: #F5F7FA;
@@ -12,8 +14,8 @@
   --color-accent-orange: #FF8C42;
 
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, rgba(74, 144, 226, 0.85) 0%, rgba(124, 179, 66, 0.85) 100%);
-  --gradient-cta: linear-gradient(135deg, #4A90E2 0%, #7CB342 100%);
+  --gradient-features: linear-gradient(135deg, rgba(120, 92, 180, 0.85) 0%, rgba(85, 65, 128, 0.875) 50%, rgba(65, 50, 100, 0.9) 100%);
+  --gradient-message: linear-gradient(135deg, #8a76c2 0%, #785cb4 50%, #554180 100%);
 
   /* Typography */
   --font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -123,6 +125,10 @@ main {
   padding: 0 var(--container-padding);
 }
 
+.pc-only {
+  display: inline;
+}
+
 .sp-only {
   display: none;
 }
@@ -186,7 +192,7 @@ main {
 }
 
 .header__nav-link:hover {
-  color: var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
   background-color: var(--color-soft-gray);
 }
 
@@ -198,7 +204,7 @@ main {
 
 .header__phone {
   font-weight: 700;
-  color: var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
   font-size: var(--font-size-large);
   padding: 8px 16px;
   border-radius: var(--radius-button);
@@ -268,29 +274,39 @@ main {
 
 .btn--phone {
   background-color: var(--color-pure-white);
-  color: var(--color-nasu-blue);
-  border: 3px solid var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
+  border: 3px solid var(--color-nasu-violet);
   min-width: 280px;
 }
 
 .btn--phone:hover {
-  background-color: var(--color-nasu-blue);
+  background-color: var(--color-nasu-violet);
   color: var(--color-pure-white);
 }
 
 .btn--line {
   background-color: #06C755;
   color: var(--color-pure-white);
+  border: 3px solid #06C755;
   min-width: 280px;
 }
 
 .btn--line:hover {
   background-color: #05B04C;
+  border-color: #05B04C;
 }
 
 .btn__icon {
-  font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 8px;
+}
+
+.btn__icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 /* ========================================
@@ -497,7 +513,7 @@ main {
   text-align: center;
   margin-top: var(--spacing-large);
   padding: var(--spacing-medium);
-  background: var(--gradient-cta);
+  background: var(--gradient-message);
   border-radius: var(--radius-card);
   color: var(--color-pure-white);
 }
@@ -549,7 +565,7 @@ main {
   top: 0;
   left: 0;
   width: 72%;
-  background: linear-gradient(to bottom, rgba(74, 144, 226, 0.95), rgba(124, 179, 66, 0.9));
+  background: var(--gradient-features);
   color: var(--color-pure-white);
   padding: var(--spacing-medium);
   display: flex;
@@ -593,7 +609,7 @@ main {
 .features__subtitle {
   font-size: var(--font-size-large);
   font-weight: 700;
-  color: var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
   margin-bottom: var(--spacing-small);
 }
 
@@ -630,7 +646,7 @@ main {
 
 .trainer__role {
   display: inline-block;
-  background-color: var(--color-nasu-blue);
+  background-color: var(--color-nasu-violet);
   color: var(--color-pure-white);
   padding: 8px 20px;
   border-radius: 20px;
@@ -652,7 +668,7 @@ main {
 }
 
 .trainer__highlight {
-  color: var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
   font-size: var(--font-size-large);
 }
 
@@ -674,7 +690,7 @@ main {
 .trainer__stat-number {
   font-size: 32px;
   font-weight: 700;
-  color: var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
   margin-bottom: 8px;
 }
 
@@ -722,13 +738,13 @@ main {
 
 .expert__title {
   font-size: var(--font-size-large);
-  color: var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
 }
 
 .expert__quote {
   background-color: var(--color-soft-gray);
   padding: var(--spacing-medium);
-  border-left: 4px solid var(--color-nasu-blue);
+  border-left: 4px solid var(--color-nasu-violet);
   border-radius: var(--radius-card);
   margin: var(--spacing-small) 0;
 }
@@ -800,7 +816,7 @@ main {
   display: flex;
   gap: var(--spacing-xs);
   font-weight: 700;
-  color: var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
 }
 
 /* ========================================
@@ -835,12 +851,12 @@ main {
 }
 
 .pricing__tab:hover {
-  background-color: #3A7FC8;
+  background-color: var(--color-nasu-violet-dark);
   color: var(--color-pure-white);
 }
 
 .pricing__tab--active {
-  background-color: var(--color-nasu-blue);
+  background-color: var(--color-nasu-violet);
   color: var(--color-pure-white);
 }
 
@@ -869,7 +885,7 @@ main {
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--color-fresh-green);
+  color: var(--color-nasu-violet);
   font-weight: 700;
 }
 
@@ -887,12 +903,12 @@ main {
 }
 
 .pricing__table th {
-  background-color: var(--color-nasu-blue);
+  background-color: var(--color-nasu-violet);
   color: var(--color-pure-white);
   padding: 16px;
   font-weight: 700;
   text-align: center;
-  border: 1px solid #3A7FC8;
+  border: 1px solid var(--color-nasu-violet-dark);
 }
 
 .pricing__table td {
@@ -916,7 +932,9 @@ main {
 .cta {
   position: relative;
   padding: var(--spacing-section) 0;
-  background: var(--gradient-cta);
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
   opacity: 1;
   overflow: hidden;
 }
@@ -927,10 +945,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/background.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3;
+  background: rgba(255, 255, 255, 0.75);
   z-index: 1;
 }
 
@@ -938,7 +953,7 @@ main {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: var(--color-pure-white);
+  color: var(--color-dark-navy);
 }
 
 .cta__title {
@@ -950,7 +965,6 @@ main {
 .cta__subtitle {
   font-size: var(--font-size-large);
   margin-bottom: var(--spacing-large);
-  opacity: 0.95;
 }
 
 .cta__buttons {
@@ -969,6 +983,7 @@ main {
 .cta__button-label {
   font-size: var(--font-size-base);
   font-weight: 700;
+  color: var(--color-dark-navy);
 }
 
 /* ========================================
@@ -992,7 +1007,7 @@ main {
 .access__info-title {
   font-size: var(--font-size-large);
   font-weight: 700;
-  color: var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
   margin-bottom: 8px;
 }
 
@@ -1002,13 +1017,13 @@ main {
 }
 
 .access__phone {
-  font-weight: 700;
+  /* font-weight: 700; */
   transition: var(--transition-fast);
   text-decoration: underline;
 }
 
 .access__phone:hover {
-  color: var(--color-nasu-blue);
+  color: var(--color-nasu-violet);
   text-decoration: underline;
 }
 
