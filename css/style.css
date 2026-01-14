@@ -5,13 +5,11 @@
   /* Colors - Nasu Highlands Inspired Palette */
   --color-nasu-violet: #785cb4;
   --color-nasu-violet-dark: #554180;
-  --color-nasu-yellow: #f9df70;
-  --color-fresh-green: #7CB342;
   --color-pure-white: #FFFFFF;
   --color-soft-gray: #F5F7FA;
   --color-medium-gray: #6C757D;
   --color-dark-navy: #1A2332;
-  --color-accent-orange: #FF8C42;
+  --color-accent-orange: #E58040;
 
   /* Gradients */
   --gradient-features: linear-gradient(135deg, rgba(120, 92, 180, 0.85) 0%, rgba(85, 65, 128, 0.875) 50%, rgba(65, 50, 100, 0.9) 100%);
@@ -257,7 +255,7 @@ main {
 }
 
 .btn--primary:hover {
-  background-color: #E67A2E;
+  background-color: #D07038;
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
@@ -923,7 +921,7 @@ main {
 }
 
 .pricing__table tbody tr:hover {
-  background-color: #E8F4FD;
+  background-color: #F0EDF5;
 }
 
 /* ========================================

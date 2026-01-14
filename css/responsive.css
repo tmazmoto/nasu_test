@@ -566,7 +566,7 @@
 /* Focus visible for keyboard navigation */
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--color-nasu-blue);
+  outline: 3px solid var(--color-nasu-violet);
   outline-offset: 2px;
 }
 
@@ -585,8 +585,7 @@ button:focus-visible {
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   :root {
-    --color-nasu-blue: #0066CC;
-    --color-fresh-green: #006600;
+    --color-nasu-violet: #5A4090;
     --color-accent-orange: #CC5500;
   }
 
