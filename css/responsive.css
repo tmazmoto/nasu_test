@@ -4,9 +4,19 @@
    ======================================== */
 
 /* ========================================
+   PC only class (hidden on tablet/mobile)
+   ======================================== */
+.mobile-only {
+  display: none;
+}
+
+/* ========================================
    Tablet (768px - 1023px)
    ======================================== */
 @media screen and (max-width: 1023px) {
+  .mobile-only {
+    display: block;
+  }
   :root {
     --font-size-h1: 40px;
     --font-size-h2: 32px;
@@ -72,9 +82,15 @@
   .header__mobile-toggle {
     display: flex;
     position: relative;
+    width: 25px;
+    height: 19px;
   }
 
   /* Mobile Toggle Active State */
+  .header__mobile-toggle.active {
+    gap: 0;
+  }
+
   .header__mobile-toggle.active span {
     position: absolute;
     left: 50%;

@@ -115,8 +115,16 @@
     mobileToggle.setAttribute('aria-label', 'メニューを閉じる');
     mobileToggle.setAttribute('aria-expanded', 'true');
 
+    // Calculate scrollbar width to prevent layout shift
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
     // Prevent body scroll when menu is open
     document.body.style.overflow = 'hidden';
+
+    // Add padding to compensate for scrollbar removal
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
 
     // Create overlay
     createOverlay();

@@ -179,7 +179,7 @@ main {
 
 .header__nav-list {
   display: flex;
-  gap: var(--spacing-medium);
+  gap: var(--spacing-small);
 }
 
 .header__nav-link {
